@@ -121,17 +121,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1544785349-c4a5301826fd?w=400&q=80"
   },
   {
-    "id": "12",
-    "name": "Ukulele",
-    "subtitle": "Soprano ukulele",
-    "category": "String",
-    "origin": "Hawaii",
-    "type": "Soprano",
-    "year": 2021,
-    "description": "A soprano ukulele crafted from mahogany with a warm, bright tone. With just four strings and a compact body, it is ideal for beginners and travelling musicians. Its cheerful sound is beloved in Hawaiian and popular music.",
-    "imageUrl": "https://images.unsplash.com/photo-1591970952402-24e17f51c075?w=400&q=80"
-  },
-  {
     "id": "13",
     "name": "Upright Bass",
     "subtitle": "Double bass",
@@ -165,17 +154,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
   },
   {
-    "id": "16",
-    "name": "French Horn",
-    "subtitle": "Orchestral brass",
-    "category": "Wind",
-    "origin": "Germany",
-    "type": "Double Horn",
-    "year": 2021,
-    "description": "A professional double French horn in F/Bb, crafted from yellow brass with a nickel silver rotary valve system. Produces the warm, noble tone that defines its role in orchestral and chamber music. Includes a hard case.",
-    "imageUrl": "https://images.unsplash.com/photo-1519419166318-4f5978601b92?w=400&q=80"
-  },
-  {
     "id": "17",
     "name": "Banjo",
     "subtitle": "5-string bluegrass banjo",
@@ -207,17 +185,6 @@
     "year": 2015,
     "description": "A 47-string concert pedal harp with a spruce soundboard and a rich maple pillar. The seven pedals allow full chromatic playing across six and a half octaves. The harp's ethereal tone has made it an orchestral and solo favourite for centuries.",
     "imageUrl": "https://images.unsplash.com/photo-1461784180009-21121b2f204c?w=400&q=80"
-  },
-  {
-    "id": "20",
-    "name": "Clarinet",
-    "subtitle": "Bb soprano clarinet",
-    "category": "Wind",
-    "origin": "Germany",
-    "type": "Soprano",
-    "year": 2022,
-    "description": "A professional Bb clarinet crafted from grenadilla wood with silver-plated keys. Features the Boehm key system for technically demanding repertoire. Produces a warm, rich tone across three and a half octaves.",
-    "imageUrl": "https://images.unsplash.com/photo-1567423533234-e60c77fc7084?w=400&q=80"
   },
   {
     "id": "21",
@@ -462,17 +429,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=400&q=80"
   },
   {
-    "id": "43",
-    "name": "Bagpipes",
-    "subtitle": "Scottish Highland pipes",
-    "category": "Wind",
-    "origin": "Scotland",
-    "type": "Highland",
-    "year": 2014,
-    "description": "Scottish Highland bagpipes with a hide bag, a chanter, and three drones. The continuous sound produced by the bag allows uninterrupted melodies over a constant drone harmony. Iconic in military ceremony and Celtic music traditions.",
-    "imageUrl": "https://images.unsplash.com/photo-1519419166318-4f5978601b92?w=400&q=80"
-  },
-  {
     "id": "44",
     "name": "Bouzouki",
     "subtitle": "Greek long-neck lute",
@@ -537,16 +493,5 @@
     "year": 2023,
     "description": "A modern drum machine with 64 pads, a built-in step sequencer, and hundreds of sampled and synthesized drum sounds. Foundational to electronic music, hip-hop, and pop production. Features MIDI, USB, and CV/Gate connectivity.",
     "imageUrl": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&q=80"
-  },
-  {
-    "id": "50",
-    "name": "Didgeridoo",
-    "subtitle": "Australian wind instrument",
-    "category": "Wind",
-    "origin": "Australia",
-    "type": "Natural",
-    "year": 2015,
-    "description": "A traditional Australian Aboriginal didgeridoo crafted from a eucalyptus branch hollowed by termites. Produces a deep, droning tone through circular breathing. One of the oldest wind instruments in the world, with a continuous, meditative sound.",
-    "imageUrl": "https://images.unsplash.com/photo-1567423533234-e60c77fc7084?w=400&q=80"
   }
 ]

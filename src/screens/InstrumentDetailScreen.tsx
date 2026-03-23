@@ -10,7 +10,14 @@ import {
 import { useNavigation, useRoute } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RouteProp } from '@react-navigation/native';
-import { Colors, FontSize, FontWeight, Spacing, Shadow } from '../theme/tokens';
+import {
+  Colors,
+  FontSize,
+  FontWeight,
+  Spacing,
+  Shadow,
+  Radius,
+} from '../theme/tokens';
 import type { RootStackParamList } from '../navigation/RootNavigator';
 
 type Nav = NativeStackNavigationProp<RootStackParamList, 'InstrumentDetail'>;
@@ -23,52 +30,54 @@ export function InstrumentDetailScreen(): React.JSX.Element {
 
   return (
     <View style={styles.root}>
-      <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
-
-        {/* Hero image */}
+      <ScrollView
+        contentContainerStyle={styles.scroll}
+        bounces={false}
+        showsVerticalScrollIndicator={false}
+      >
         <Image
           source={{ uri: instrument.imageUrl }}
           style={styles.hero}
           resizeMode="cover"
         />
 
-        {/* Content */}
         <View style={styles.content}>
           <Text style={styles.name}>{instrument.name}</Text>
           <Text style={styles.category}>{instrument.category} Instrument</Text>
 
-          {/* Properties table */}
           <View style={styles.table}>
             <View style={styles.row}>
               <Text style={styles.rowLabel}>Origin</Text>
               <Text style={styles.rowValue}>{instrument.origin}</Text>
             </View>
+
             <View style={styles.divider} />
+
             <View style={styles.row}>
               <Text style={styles.rowLabel}>Type</Text>
               <Text style={styles.rowValue}>{instrument.type}</Text>
             </View>
+
             <View style={styles.divider} />
+
             <View style={styles.row}>
               <Text style={styles.rowLabel}>Year</Text>
               <Text style={styles.rowValue}>{instrument.year}</Text>
             </View>
           </View>
 
-          {/* Description */}
           <Text style={styles.descriptionTitle}>Description</Text>
           <Text style={styles.descriptionText}>{instrument.description}</Text>
         </View>
       </ScrollView>
 
-      {/* Back button */}
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.backButton}
           onPress={() => navigation.goBack()}
-          activeOpacity={0.8}
+          activeOpacity={0.85}
         >
-          <Text style={styles.backButtonText}>← Back</Text>
+          <Text style={styles.backButtonText}>Back</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -81,14 +90,17 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surface,
   },
   scroll: {
-    paddingBottom: 100,
+    paddingBottom: 110,
   },
   hero: {
     width: '100%',
-    height: 260,
+    height: 280,
+    backgroundColor: Colors.surfaceSecondary,
   },
   content: {
-    padding: Spacing.xl,
+    paddingHorizontal: Spacing.xl,
+    paddingTop: Spacing.xl,
+    paddingBottom: Spacing.lg,
   },
   name: {
     fontSize: FontSize.xxxl,
@@ -103,7 +115,7 @@ const styles = StyleSheet.create({
   },
   table: {
     backgroundColor: Colors.surfaceSecondary,
-    borderRadius: Spacing.md,
+    borderRadius: Radius.lg,
     marginBottom: Spacing.xl,
     overflow: 'hidden',
     ...Shadow.card,
@@ -138,7 +150,7 @@ const styles = StyleSheet.create({
   descriptionText: {
     fontSize: FontSize.md,
     color: Colors.textSecondary,
-    lineHeight: 24,
+    lineHeight: 28,
   },
   footer: {
     position: 'absolute',
@@ -148,13 +160,15 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surface,
     borderTopWidth: 1,
     borderTopColor: Colors.border,
-    padding: Spacing.lg,
+    paddingHorizontal: Spacing.lg,
+    paddingTop: Spacing.md,
+    paddingBottom: Spacing.lg,
     ...Shadow.modal,
   },
   backButton: {
     backgroundColor: Colors.primary,
-    borderRadius: Spacing.md,
-    height: 48,
+    borderRadius: Radius.md,
+    height: 46,
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -14,7 +14,14 @@ import { useInfiniteInstruments } from '../hooks/useInfiniteInstruments';
 import { InstrumentCard } from '../components/instruments/InstrumentCard';
 import { LoadingFooter } from '../components/common/LoadingFooter';
 import { EmptyState } from '../components/common/EmptyState';
-import { Colors, FontSize, FontWeight, Spacing } from '../theme/tokens';
+import {
+  Colors,
+  FontSize,
+  FontWeight,
+  Spacing,
+  Shadow,
+  Radius,
+} from '../theme/tokens';
 import type { Instrument } from '../types/instrument';
 import type { RootStackParamList } from '../navigation/RootNavigator';
 
@@ -29,7 +36,7 @@ export function InstrumentsListScreen(): React.JSX.Element {
     (instrument: Instrument): void => {
       navigation.navigate('InstrumentDetail', { instrument });
     },
-    [navigation],
+    [navigation]
   );
 
   if (isLoading) {
@@ -44,8 +51,8 @@ export function InstrumentsListScreen(): React.JSX.Element {
     return (
       <View style={styles.centered}>
         <Text style={styles.errorText}>{error}</Text>
-        <TouchableOpacity style={styles.retryButton} onPress={refresh}>
-          <Text style={styles.retryText}>Reintentar</Text>
+        <TouchableOpacity style={styles.retryButton} onPress={refresh} activeOpacity={0.85}>
+          <Text style={styles.retryText}>Retry</Text>
         </TouchableOpacity>
       </View>
     );
@@ -53,9 +60,9 @@ export function InstrumentsListScreen(): React.JSX.Element {
 
   return (
     <SafeAreaView style={styles.root}>
-      {/* Header */}
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Instruments</Text>
+        <Text style={styles.headerSubtitle}>Browse the collection</Text>
       </View>
 
       <FlatList
@@ -66,8 +73,9 @@ export function InstrumentsListScreen(): React.JSX.Element {
         )}
         contentContainerStyle={styles.list}
         onEndReached={hasMore ? loadMore : undefined}
-        onEndReachedThreshold={0.3}
-        ListFooterComponent={isLoadingMore ? <LoadingFooter /> : null}
+        onEndReachedThreshold={0.35}
+        showsVerticalScrollIndicator={false}
+        ListFooterComponent={isLoadingMore ? <LoadingFooter /> : <View style={styles.listEndSpace} />}
         ListEmptyComponent={<EmptyState />}
       />
     </SafeAreaView>
@@ -84,34 +92,48 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: Colors.background,
+    paddingHorizontal: Spacing.xl,
   },
   header: {
     backgroundColor: Colors.surface,
-    paddingHorizontal: Spacing.lg,
-    paddingVertical: Spacing.lg,
+    paddingHorizontal: Spacing.xl,
+    paddingTop: Spacing.lg,
+    paddingBottom: Spacing.md,
     borderBottomWidth: 1,
     borderBottomColor: Colors.border,
-    alignItems: 'center',
+    ...Shadow.card,
   },
   headerTitle: {
-    fontSize: FontSize.lg,
+    fontSize: FontSize.xl,
     fontWeight: FontWeight.semibold,
     color: Colors.textPrimary,
+    textAlign: 'center',
+  },
+  headerSubtitle: {
+    marginTop: Spacing.xs,
+    fontSize: FontSize.sm,
+    color: Colors.textSecondary,
+    textAlign: 'center',
   },
   list: {
+    paddingHorizontal: Spacing.lg,
     paddingTop: Spacing.lg,
-    paddingBottom: Spacing.xxxl,
+    paddingBottom: Spacing.xxl,
+  },
+  listEndSpace: {
+    height: Spacing.lg,
   },
   errorText: {
     fontSize: FontSize.md,
     color: Colors.textSecondary,
     marginBottom: Spacing.lg,
+    textAlign: 'center',
   },
   retryButton: {
     backgroundColor: Colors.primary,
     paddingHorizontal: Spacing.xl,
     paddingVertical: Spacing.md,
-    borderRadius: Spacing.md,
+    borderRadius: Radius.md,
   },
   retryText: {
     color: Colors.white,
